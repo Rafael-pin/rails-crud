@@ -4,8 +4,8 @@ class CreateProposals < ActiveRecord::Migration
       t.string :name, null: false
       t.text :description, null: false
       t.decimal :value, null: false
-      t.dateTime :start_date, null: false
-      t.dateTime :end_date, null: false
+      t.date :start_date, null: false
+      t.date :end_date, null: false
 
       t.timestamps null: false
     end

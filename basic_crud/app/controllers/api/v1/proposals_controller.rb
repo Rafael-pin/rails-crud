@@ -18,14 +18,23 @@ module Api
 				if proposal.save
 					render json: {status: 'SUCCESS', message:'Proposta salva', data:proposal},status: :ok
 				else
-					render json: {status: 'ERROR', message:'Proposta não salva', data:proposal.erros},status: :unprocessable_entity
+					render json: {status: 'ERROR', message:'Proposta não salva', data:proposal.errors},status: :unprocessable_entity
 				end
 			end
 
             def destroy
 				proposal = Proposal.find(params[:id])
 				proposal.destroy
-				render json: {status: 'SUCCESS', message:'Deleted proposal', data:proposal},status: :ok
+				render json: {status: 'SUCCESS', message:'Proposta deletada', data:proposal},status: :ok
+			end
+
+            def update
+				proposal = Proposal.find(params[:id])
+				if proposal.update_attributes(proposal_params)
+					render json: {status: 'SUCCESS', message:'Proposta atualizada', data:proposal},status: :ok
+				else
+					render json: {status: 'ERROR', message:'Proposta não atualizada', data:proposal.errors},status: :unprocessable_entity
+				end
 			end
 
             private

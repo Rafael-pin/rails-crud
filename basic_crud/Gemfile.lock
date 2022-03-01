@@ -49,6 +49,9 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    date_validator (0.12.0)
+      activemodel (>= 3)
+      activesupport (>= 3)
     debug_inspector (1.1.0)
     erubis (2.7.0)
     execjs (2.8.1)
@@ -155,6 +158,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  date_validator (~> 0.12.0)
   faker
   jbuilder (~> 2.0)
   jquery-rails

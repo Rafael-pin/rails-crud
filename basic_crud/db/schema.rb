@@ -11,6 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20220301132650) do
+
+  create_table "proposals", force: :cascade do |t|
+    t.string   "name",        limit: 255,                  null: false
+    t.text     "description", limit: 65535,                null: false
+    t.decimal  "value",                     precision: 10, null: false
+    t.date     "start_date",                               null: false
+    t.date     "end_date",                                 null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
 
 end
